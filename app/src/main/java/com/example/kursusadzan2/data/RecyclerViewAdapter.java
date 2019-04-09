@@ -40,6 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.azar.setText(jadwalList.get(position).getTimings().getAsr());
         holder.magrib.setText(jadwalList.get(position).getTimings().getMaghrib());
         holder.isya.setText(jadwalList.get(position).getTimings().getIsha());
+        holder.tanggal.setText(jadwalList.get(position).getDate().getReadable());
 
 
 
@@ -51,15 +52,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
 public class ViewHolder extends RecyclerView.ViewHolder {
-private TextView subuh, duhur, azar, magrib, isya;
+private TextView subuh, duhur, azar, magrib, isya, tanggal;
 
     public ViewHolder(View itemView) {
         super(itemView);
-        subuh = itemView.findViewById(R.id.jadwal_subuh);
-        duhur = itemView.findViewById(R.id.jadwal_duhur);
-        azar = itemView.findViewById(R.id.jadwal_azar);
-        magrib = itemView.findViewById(R.id.jadwal_magrib);
-        isya = itemView.findViewById(R.id.jadwal_isya);
+        tanggal = itemView.findViewById(R.id.tanggal);
+        subuh = itemView.findViewById(R.id.time_subuh);
+        duhur = itemView.findViewById(R.id.time_duhur);
+        azar = itemView.findViewById(R.id.time_azar);
+        magrib = itemView.findViewById(R.id.time_magrib);
+        isya = itemView.findViewById(R.id.time_isya);
 
     }
 }
