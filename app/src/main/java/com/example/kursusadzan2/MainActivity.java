@@ -1,7 +1,6 @@
 package com.example.kursusadzan2;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import retrofit2.Call;
@@ -13,6 +12,7 @@ import android.util.Log;
 
 
 import com.example.kursusadzan2.data.RecyclerViewAdapter;
+import com.example.kursusadzan2.data.model.APIEndpoint;
 import com.example.kursusadzan2.data.model.AdzanResponse;
 import com.example.kursusadzan2.data.remote.AdzanService;
 
@@ -31,12 +31,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recycler_view);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
 
 
-
-        //memanggil adzanservis metho get api
+//        memanggil adzanservis metho get api
 
         AdzanService.getAPI()
                 .getPrayerTimeByCity("Makassar", "ID")
@@ -44,17 +43,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<AdzanResponse> call, Response<AdzanResponse> response) {
                         if (response.isSuccessful()) {
-                            List<AdzanResponse.DataBean> dataBeans = response.body().getData();
+                            List<AdzanResponse.DataBean> list = response.body().getData();
+                            adapter = new RecyclerViewAdapter(list);
+                            recyclerView.setAdapter(adapter);
 
-                            for (AdzanResponse.DataBean dataBean : dataBeans) {
-                                AdzanResponse.DataBean.TimingsBean timingsBean = dataBean.getTimings();
-                                AdzanResponse.DataBean.DateBean dateBean = dataBean.getDate();
-                                AdzanResponse.DataBean.MetaBean metaBean = dataBean.getMeta();
-
-                                Log.d("Jadwal Sholat Subuh ", timingsBean.getFajr() + "in "
-                                        + dateBean.getReadable() + " Kota "
-                                        + metaBean.getTimezone());
-                            }
                         }
                     }
 

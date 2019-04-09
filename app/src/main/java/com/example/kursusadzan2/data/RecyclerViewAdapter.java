@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.example.kursusadzan2.R;
 import com.example.kursusadzan2.data.model.AdzanResponse;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -17,40 +18,48 @@ import androidx.recyclerview.widget.RecyclerView;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
 
-    private List<AdzanResponse> jadwalList;
+    private List<AdzanResponse.DataBean> jadwalList;
 
-    public RecyclerViewAdapter(List<AdzanResponse> jadwalList) {
+    public RecyclerViewAdapter(List<AdzanResponse.DataBean> jadwalList) {
         this.jadwalList = jadwalList;
 
     }
 
-    @NonNull
+
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_model, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.subuh.setText(jadwalList.get(position).getCode());
+        holder.subuh.setText(jadwalList.get(position).getTimings().getFajr());
+        holder.duhur.setText(jadwalList.get(position).getTimings().getDhuhr());
+        holder.azar.setText(jadwalList.get(position).getTimings().getAsr());
+        holder.magrib.setText(jadwalList.get(position).getTimings().getMaghrib());
+        holder.isya.setText(jadwalList.get(position).getTimings().getIsha());
+
 
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+         return jadwalList.size();
     }
 
 public class ViewHolder extends RecyclerView.ViewHolder {
-private TextView subuh;
+private TextView subuh, duhur, azar, magrib, isya;
 
-    public ViewHolder(@NonNull View itemView) {
+    public ViewHolder(View itemView) {
         super(itemView);
-
         subuh = itemView.findViewById(R.id.jadwal_subuh);
+        duhur = itemView.findViewById(R.id.jadwal_duhur);
+        azar = itemView.findViewById(R.id.jadwal_azar);
+        magrib = itemView.findViewById(R.id.jadwal_magrib);
+        isya = itemView.findViewById(R.id.jadwal_isya);
 
     }
 }
