@@ -7,8 +7,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.os.Bundle;
+import android.renderscript.RenderScript;
 import android.util.Log;
+import android.view.View;
 
 
 import com.example.kursusadzan2.data.RecyclerViewAdapter;
@@ -33,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-
-
-//        memanggil adzanservis metho get api
 
         AdzanService.getAPI()
                 .getPrayerTimeByCity("Makassar", "ID")

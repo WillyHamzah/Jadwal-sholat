@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">KursusAdzan2</string>
+    <string name="app_name">Jadwal Waktu Shalat</string>
+    <string name="tanggal">TANGGAL</string>
 </resources>

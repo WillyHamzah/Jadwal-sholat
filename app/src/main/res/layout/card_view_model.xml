@@ -3,33 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+
+
     android:orientation="vertical">
-
-
 
 <TextView
     android:id="@+id/tanggal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="TANGGAL"
-    android:textSize="30dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
+    android:text="@string/tanggal"
+    android:textSize="30sp"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="10dp"
+    android:textStyle="bold"
     />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_subuh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:padding="10dp"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tanggal"
+
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,25 +44,37 @@
                 android:id="@+id/jadwal_subuh"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="14dp"
                 android:padding="15dp"
-                android:text="Subuh"
-                android:textSize="18dp" />
+                android:text="Sholat Subuh"
+                android:textSize="19dp"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/time_subuh"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="100dp"
+                android:layout_marginEnd="80dp"
                 android:gravity="right"
                 android:text="Jadwal"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/jadwal_subuh"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.514" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="41dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="21dp"
+                android:src="@drawable/ic_access_time_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/time_subuh"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -67,8 +83,8 @@
         android:id="@+id/cv_duhur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:padding="10dp"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
@@ -85,25 +101,37 @@
                 android:id="@+id/jadwal_duhur"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="14dp"
                 android:padding="15dp"
-                android:text="Duhur"
-                android:textSize="18dp" />
+                android:text="Sholat Dzuhur"
+                android:textSize="19dp"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/time_duhur"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="100dp"
+                android:layout_marginEnd="80dp"
                 android:gravity="right"
                 android:text="Jadwal"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/jadwal_duhur"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.514" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="41dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="21dp"
+                android:src="@drawable/ic_access_time_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/time_duhur"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -112,8 +140,8 @@
         android:id="@+id/cv_azar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:padding="10dp"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
@@ -130,25 +158,37 @@
                 android:id="@+id/jadwal_azar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="14dp"
                 android:padding="15dp"
-                android:text="Azar"
-                android:textSize="18dp" />
+                android:text="Sholat Ashr"
+                android:textSize="19dp"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/time_azar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="100dp"
+                android:layout_marginEnd="80dp"
                 android:gravity="right"
                 android:text="Jadwal"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/jadwal_azar"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.514" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="41dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="21dp"
+                android:src="@drawable/ic_access_time_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/time_azar"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -157,8 +197,8 @@
         android:id="@+id/cv_magrib"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:padding="10dp"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
@@ -175,25 +215,37 @@
                 android:id="@+id/jadwal_magrib"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="14dp"
                 android:padding="15dp"
-                android:text="Magrib"
-                android:textSize="18dp" />
+                android:text="Sholat Maghrib"
+                android:textSize="19dp"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/time_magrib"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="100dp"
+                android:layout_marginEnd="80dp"
                 android:gravity="right"
                 android:text="Jadwal"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/jadwal_magrib"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.514" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="41dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="21dp"
+                android:src="@drawable/ic_access_time_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/cv_magrib"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -201,8 +253,8 @@
         android:id="@+id/cv_isya"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:padding="10dp"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
@@ -219,25 +271,37 @@
                 android:id="@+id/jadwal_isya"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="14dp"
                 android:padding="15dp"
-                android:text="Isya"
-                android:textSize="18dp" />
+                android:text="Sholat Isya"
+                android:textSize="19dp"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/time_isya"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="100dp"
+                android:layout_marginEnd="80dp"
                 android:gravity="right"
                 android:text="Jadwal"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/jadwal_isya"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.514" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="41dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="21dp"
+                android:src="@drawable/ic_access_time_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/cv_isya"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
